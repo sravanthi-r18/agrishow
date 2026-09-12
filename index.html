@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Addresses - ShopZone</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="main-header">
+
+    <div class="logo">
+        <a href="index.html">ShopZone</a>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+        >
+
+        <button onclick="searchProducts()">🔍</button>
+    </div>
+
+    <nav class="main-nav">
+
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="orders.html">Orders</a>
+        <a href="profile.html">Profile</a>
+
+        <a href="cart.html" class="cart-link">
+            🛒 Cart
+            <span id="cartCount">0</span>
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- CATEGORY BAR -->
+<div class="category-bar">
+
+    <a href="products.html">All</a>
+
+    <a href="products.html?category=electronics">
+        Electronics
+    </a>
+
+    <a href="products.html?category=fashion">
+        Fashion
+    </a>
+
+    <a href="products.html?category=home">
+        Home & Kitchen
+    </a>
+
+    <a href="products.html?category=beauty">
+        Beauty
+    </a>
+
+    <a href="products.html?category=books">
+        Books
+    </a>
+
+    <a href="products.html?category=grocery">
+        Grocery
+    </a>
+
+    <a href="offers.html">
+        🔥 Offers
+    </a>
+
+</div>
+
+
+<!-- PAGE TITLE -->
+<section class="page-title">
+
+    <div class="container">
+
+        <h1>📍 My Addresses</h1>
+
+        <p>Manage your delivery addresses</p>
+
+    </div>
+
+</section>
+
+
+<!-- MAIN CONTENT -->
+<section class="address-section">
+
+    <div class="container">
+
+
+        <!-- ADD ADDRESS -->
+        <div class="profile-card">
+
+            <h2>➕ Add New Address</h2>
+
+            <form id="addressForm">
+
+                <div class="form-group">
+
+                    <label>Full Name</label>
+
+                    <input
+                        type="text"
+                        id="addressName"
+                        placeholder="Enter full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Mobile Number</label>
+
+                    <input
+                        type="tel"
+                        id="addressMobile"
+                        placeholder="10 digit mobile number"
+                        maxlength="10"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Address</label>
+
+                    <textarea
+                        id="addressText"
+                        rows="4"
+                        placeholder="House No, Street, Area"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>City</label>
+
+                    <input
+                        type="text"
+                        id="addressCity"
+                        placeholder="Enter city"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>State</label>
+
+                    <input
+                        type="text"
+                        id="addressState"
+                        placeholder="Enter state"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>PIN Code</label>
+
+                    <input
+                        type="text"
+                        id="addressPincode"
+                        placeholder="6 digit PIN code"
+                        maxlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Address Type</label>
+
+                    <select id="addressType">
+
+                        <option value="Home">
+                            🏠 Home
+                        </option>
+
+                        <option value="Work">
+                            🏢 Work
+                        </option>
+
+                        <option value="Other">
+                            📍 Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="defaultAddress"
+                        >
+
+                        Make this default address
+
+                    </label>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn"
+                    id="saveButton"
+                >
+                    Save Address
+                </button>
+
+
+                <button
+                    type="button"
+                    class="btn secondary-btn"
+                    id="cancelButton"
+                    style="display:none;"
+                    onclick="cancelEdit()"
+                >
+                    Cancel
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- SAVED ADDRESSES -->
+        <div class="profile-card">
+
+            <h2>📌 Saved Addresses</h2>
+
+            <div id="addressList"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>ShopZone</h3>
+
+                <p>
+                    Your trusted online shopping destination
+                    for quality products and great deals.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="categories.html">Categories</a>
+                <a href="products.html">Products</a>
+                <a href="offers.html">Offers</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Customer Service</h3>
+
+                <a href="contact.html">Contact Us</a>
+                <a href="orders.html">My Orders</a>
+                <a href="profile.html">My Profile</a>
+                <a href="about.html">About Us</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Follow Us</h3>
+
+                <p>📘 Facebook</p>
+                <p>📸 Instagram</p>
+                <p>🐦 Twitter</p>
+                <p>▶️ YouTube</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 ShopZone. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- MAIN SCRIPT -->
+<script src="script.js"></script>
+
+
+<!-- ADDRESS SCRIPT -->
+<script>
+
+let editingId = null;
+
+
+/* LOAD PAGE */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (typeof updateCartCount === "function") {
+        updateCartCount();
+    }
+
+    displayAddresses();
+
+});
+
+
+/* GET ADDRESSES */
+
+function getSavedAddresses() {
+
+    const data =
+        localStorage.getItem("shopzoneAddresses");
+
+    if (!data) {
+        return [];
+    }
+
+    try {
+
+        return JSON.parse(data);
+
+    } catch (error) {
+
+        return [];
+
+    }
+
+}
+
+
+/* SAVE ADDRESSES */
+
+function saveAddresses(data) {
+
+    localStorage.setItem(
+        "shopzoneAddresses",
+        JSON.stringify(data)
+    );
+
+}
+
+
+/* DISPLAY ADDRESSES */
+
+function displayAddresses() {
+
+    const list =
+        document.getElementById("addressList");
+
+    const addresses =
+        getSavedAddresses();
+
+
+    if (addresses.length === 0) {
+
+        list.innerHTML = `
+
+            <div class="empty-state">
+
+                <div class="empty-icon">
+                    📍
+                </div>
+
+                <h3>No Saved Addresses</h3>
+
+                <p>
+                    Add your delivery address above.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    list.innerHTML = "";
+
+
+    addresses.forEach(function (address) {
+
+        const div =
+            document.createElement("div");
+
+        div.className = "address-card";
+
+
+        div.innerHTML = `
+
+            <h3>
+                ${address.type}
+            </h3>
+
+            ${
+                address.isDefault
+                ? "<strong>⭐ Default Address</strong>"
+                : ""
+            }
+
+            <p>
+                <strong>${address.name}</strong>
+            </p>
+
+            <p>
+                📞 ${address.mobile}
+            </p>
+
+            <p>
+                📍 ${address.address}
+            </p>
+
+            <p>
+                ${address.city},
+                ${address.state}
+                -
+                ${address.pincode}
+            </p>
+
+            <br>
+
+            <button
+                class="btn"
+                onclick="editAddress('${address.id}')"
+            >
+                ✏️ Edit
+            </button>
+
+            <button
+                class="btn secondary-btn"
+                onclick="deleteAddress('${address.id}')"
+            >
+                🗑️ Delete
+            </button>
+
+            ${
+                address.isDefault
+                ? ""
+                : `
+                    <button
+                        class="btn"
+                        onclick="setDefault('${address.id}')"
+                    >
+                        ⭐ Set Default
+                    </button>
+                `
+            }
+
+        `;
+
+
+        list.appendChild(div);
+
+    });
+
+}
+
+
+/* ADD / UPDATE ADDRESS */
+
+document.getElementById("addressForm")
+.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("addressName").value.trim();
+
+    const mobile =
+        document.getElementById("addressMobile").value.trim();
+
+    const address =
+        document.getElementById("addressText").value.trim();
+
+    const city =
+        document.getElementById("addressCity").value.trim();
+
+    const state =
+        document.getElementById("addressState").value.trim();
+
+    const pincode =
+        document.getElementById("addressPincode").value.trim();
+
+    const type =
+        document.getElementById("addressType").value;
+
+    const isDefault =
+        document.getElementById("defaultAddress").checked;
+
+
+    /* MOBILE VALIDATION */
+
+    if (!/^[0-9]{10}$/.test(mobile)) {
+
+        alert(
+            "Please enter a valid 10 digit mobile number."
+        );
+
+        return;
+
+    }
+
+
+    /* PIN VALIDATION */
+
+    if (!/^[0-9]{6}$/.test(pincode)) {
+
+        alert(
+            "Please enter a valid 6 digit PIN code."
+        );
+
+        return;
+
+    }
+
+
+    let addresses =
+        getSavedAddresses();
+
+
+    /* UPDATE */
+
+    if (editingId !== null) {
+
+        addresses =
+            addresses.map(function (item) {
+
+                if (item.id === editingId) {
+
+                    return {
+
+                        id: item.id,
+
+                        name: name,
+
+                        mobile: mobile,
+
+                        address: address,
+
+                        city: city,
+
+                        state: state,
+
+                        pincode: pincode,
+
+                        type: type,
+
+                        isDefault: isDefault
+
+                    };
+
+                }
+
+                return item;
+
+            });
+
+    }
+
+
+    /* ADD */
+
+    else {
+
+        const newAddress = {
+
+            id: Date.now().toString(),
+
+            name: name,
+
+            mobile: mobile,
+
+            address: address,
+
+            city: city,
+
+            state: state,
+
+            pincode: pincode,
+
+            type: type,
+
+            isDefault: isDefault
+
+        };
+
+
+        addresses.push(newAddress);
+
+    }
+
+
+    /* DEFAULT ADDRESS */
+
+    if (isDefault) {
+
+        let selectedId;
+
+
+        if (editingId !== null) {
+
+            selectedId = editingId;
+
+        } else {
+
+            selectedId =
+                addresses[addresses.length - 1].id;
+
+        }
+
+
+        addresses =
+            addresses.map(function (item) {
+
+                return {
+
+                    ...item,
+
+                    isDefault:
+                        item.id === selectedId
+
+                };
+
+            });
+
+    }
+
+
+    /* FIRST ADDRESS DEFAULT */
+
+    if (
+        addresses.length === 1
+    ) {
+
+        addresses[0].isDefault = true;
+
+    }
+
+
+    saveAddresses(addresses);
+
+
+    resetForm();
+
+
+    displayAddresses();
+
+
+    alert(
+        editingId === null
+        ? "Address added successfully! ✅"
+        : "Address updated successfully! ✅"
+    );
+
+
+    editingId = null;
+
+});
+
+
+/* EDIT */
+
+function editAddress(id) {
+
+    const addresses =
+        getSavedAddresses();
+
+
+    const address =
+        addresses.find(function (item) {
+
+            return item.id === id;
+
+        });
+
+
+    if (!address) {
+        return;
+    }
+
+
+    editingId = id;
+
+
+    document.getElementById(
+        "addressName"
+    ).value = address.name;
+
+
+    document.getElementById(
+        "addressMobile"
+    ).value = address.mobile;
+
+
+    document.getElementById(
+        "addressText"
+    ).value = address.address;
+
+
+    document.getElementById(
+        "addressCity"
+    ).value = address.city;
+
+
+    document.getElementById(
+        "addressState"
+    ).value = address.state;
+
+
+    document.getElementById(
+        "addressPincode"
+    ).value = address.pincode;
+
+
+    document.getElementById(
+        "addressType"
+    ).value = address.type;
+
+
+    document.getElementById(
+        "defaultAddress"
+    ).checked = address.isDefault;
+
+
+    document.getElementById(
+        "saveButton"
+    ).textContent = "Update Address";
+
+
+    document.getElementById(
+        "cancelButton"
+    ).style.display = "inline-block";
+
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+/* DELETE */
+
+function deleteAddress(id) {
+
+    const answer =
+        confirm(
+            "Do you want to delete this address?"
+        );
+
+
+    if (!answer) {
+        return;
+    }
+
+
+    let addresses =
+        getSavedAddresses();
+
+
+    const deleted =
+        addresses.find(function (item) {
+
+            return item.id === id;
+
+        });
+
+
+    addresses =
+        addresses.filter(function (item) {
+
+            return item.id !== id;
+
+        });
+
+
+    /* If default was deleted */
+
+    if (
+        deleted &&
+        deleted.isDefault &&
+        addresses.length > 0
+    ) {
+
+        addresses[0].isDefault = true;
+
+    }
+
+
+    saveAddresses(addresses);
+
+
+    displayAddresses();
+
+
+    alert(
+        "Address deleted successfully."
+    );
+
+}
+
+
+/* SET DEFAULT */
+
+function setDefault(id) {
+
+    let addresses =
+        getSavedAddresses();
+
+
+    addresses =
+        addresses.map(function (item) {
+
+            return {
+
+                ...item,
+
+                isDefault:
+                    item.id === id
+
+            };
+
+        });
+
+
+    saveAddresses(addresses);
+
+
+    displayAddresses();
+
+}
+
+
+/* CANCEL */
+
+function cancelEdit() {
+
+    editingId = null;
+
+    resetForm();
+
+}
+
+
+/* RESET FORM */
+
+function resetForm() {
+
+    document.getElementById(
+        "addressForm"
+    ).reset();
+
+
+    document.getElementById(
+        "saveButton"
+    ).textContent =
+        "Save Address";
+
+
+    document.getElementById(
+        "cancelButton"
+    ).style.display =
+        "none";
+
+}
+
+</script>
+
+</body>
+</html>

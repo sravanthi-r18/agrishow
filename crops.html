@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Crops - AgriConnect</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="container navbar">
+
+        <a href="index.html" class="logo">
+            🌱 AgriConnect
+        </a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="crops.html" class="active">Crops</a>
+            <a href="market-prices.html">Market Prices</a>
+            <a href="farming-tips.html">Farming Tips</a>
+            <a href="schemes.html">Schemes</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <a href="login.html" class="btn btn-outline">
+                Login
+            </a>
+
+            <a href="register.html" class="btn btn-primary">
+                Register
+            </a>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= PAGE BANNER ================= -->
+
+<section class="page-banner">
+
+    <div class="container">
+
+        <h1>🌾 Crop Information</h1>
+
+        <p>
+            Explore different crops and learn about their
+            growing conditions, seasons and farming requirements.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Find Your Crop</h2>
+
+            <p>
+                Search for information about the crop you want to grow.
+            </p>
+
+        </div>
+
+
+        <div style="max-width:600px; margin:30px auto;">
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="🔍 Search crops..."
+                onkeyup="searchItems()"
+                style="
+                    width:100%;
+                    padding:15px;
+                    border:1px solid #ccc;
+                    border-radius:8px;
+                    font-size:16px;
+                "
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CROP CATEGORIES ================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Crop Categories</h2>
+
+            <p>
+                Choose a category to explore different types of crops.
+            </p>
+
+        </div>
+
+
+        <div class="card-grid">
+
+            <div class="card">
+
+                <div style="font-size:45
